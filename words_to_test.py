@@ -1,6 +1,6 @@
 
 
-def get_triplets_list:
+def get_triplets_list():
     words_triples_list = [['man', 'woman', 'king'],
                           ['sansa', 'stark', 'jaime'],  #lannister
                           ['jaime', 'cersei', 'jon'],  #'bran', 'ned', 'theon', 'rickon', 'rob'
@@ -126,7 +126,7 @@ def get_triplets_list:
     return words_triples_list
 
 
-def get_adjective_list:
+def get_adjective_list():
     adjectives_list = ['bitch', 'fucker','fucked', 'sexy', 'pretty', 'ugly', 'killer', 'fighter', 'strong', 'thankless', 'tactful', 'distrustful', 'quarrelsome', 'effeminate', 'fickle',
                        'talkative', 'dependable', 'resentful', 'sarcastic', 'unassuming', 'changeable', 'resourceful',
                        'persevering', 'forgiving', 'assertive', 'individualistic', 'vindictive', 'sophisticated',

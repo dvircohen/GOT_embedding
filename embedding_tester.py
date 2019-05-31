@@ -1,6 +1,6 @@
 from pprint import pprint
 from scipy import spatial
-
+from words_to_test import *
 from gensim.models import FastText
 import pandas as pd
 import numpy as np
@@ -66,7 +66,7 @@ def get_womanly_words(model, adjectives_list, woman_words_list):
 def get_similart_words_embd(model, source_mame = "Books"):
     woman_words_list, man_words_list = get_man_and_woman_words_list()
 
-    adjectives_list = get_adjectives_list()
+    adjectives_list = get_adjective_list()
     # adjectives_list = list(set(adjectives_list + get_adj_from_json()))
 
     manly_words = [x[0] for x in get_womanly_words(model, adjectives_list, man_words_list)]
@@ -85,8 +85,8 @@ def get_similart_words_embd(model, source_mame = "Books"):
 
 
 if __name__ == '__main__':
-    books_model_path = "../data/w2v_models/book_v1_model"
-    tv_show_model_path = "../data/w2v_models/tv_show_v1_model"
+    books_model_path = "models/book_v1_model"
+    tv_show_model_path = "models/tv_show_v1_model"
 
     books_model = SaveLoad.load(books_model_path)
     tv_show_model = SaveLoad.load(tv_show_model_path)
@@ -99,7 +99,7 @@ if __name__ == '__main__':
 
     similarity_df = pd.DataFrame([books_manly_words, books_womanly_words, tv_manly_words, tv_womanly_words ]).T
     similarity_df.columns = ['books manly words', 'books womanly words', 'tv manly words', 'tv womanly words']
-    similarity_df.to_csv('../data/similarity_tables/manly_and_womanly_words.csv')
+    #similarity_df.to_csv('../data/similarity_tables/manly_and_womanly_words.csv')
 
 
 
